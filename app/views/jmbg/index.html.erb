@@ -1,1 +1,7 @@
-Index
+<% if flash[:msg] %>
+  <div>
+    <%=flash[:msg][:text]%>
+  </div>
+<% end %>
+</br>
+<%= link_to 'Generiši novi matični broj', new_jmbg_path() %>

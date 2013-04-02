@@ -2,6 +2,9 @@ Maticnibroj::Application.routes.draw do
 
   root :to => 'jmbg#index'
 
+  resources :jmbg, :only => [:index, :new] do
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
