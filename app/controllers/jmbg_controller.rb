@@ -1,5 +1,7 @@
+require 'luhnacy'
+require 'verhoeff'
+
 class JmbgController < ApplicationController
-  MAX = 999999999999
 
   def index
   end
@@ -14,6 +16,6 @@ class JmbgController < ApplicationController
 
   private
   def get_jmbg
-    rand(MAX).to_s.center(13, rand(9).to_s)
+    Verhoeff.checksum_of(Luhnacy.generate(12))
   end
 end
