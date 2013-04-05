@@ -7,14 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/bs_BA/all.js#xfbml=1&appId=180756018740982";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
   <div id="container">
     <h1>JMBG.ORG je sistem za generisanje matičnih brojeva za sve novorođene građanje Bosne i Hercegovine<h1>
 
     <%= yield %>
 
     <a href="<%= new_jmbg_path() %>"><div id="btn"></div></a>
+
+
+    <div class="fb-like" data-href="http://www.jmbg.org" data-send="true" data-width="450" data-show-faces="false"></div>
+
+    <div class="fb-comments" data-href="http://www.jmbg.org" data-width="450" data-num-posts="10"></div>
   </div>
 
-  <a href="http://www.atlantbh.com"><div id="footer"></div></a>  
+  <a href="http://www.atlantbh.com"><div id="footer"></div></a>
+
 </body>
 </html>

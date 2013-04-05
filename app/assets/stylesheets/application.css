@@ -71,3 +71,10 @@ h1{
 	text-align: center;
 	padding: 10px;
 }
+
+.fb-like{
+  width:400px;
+  height: 60px;
+  text-align: center;
+  padding-left: 100px;
+}
