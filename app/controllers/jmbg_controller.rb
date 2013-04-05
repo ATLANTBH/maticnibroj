@@ -1,21 +1,14 @@
-require 'luhnacy'
-require 'verhoeff'
-
 class JmbgController < ApplicationController
+  respond_to :html
 
   def index
   end
 
-  def new
-    @jmbg = get_jmbg()
-    
-    flash[:msg] = { :type => 'info', :text => "JMBG kreiran: #{@jmbg}"}
-
-    redirect_to root_path()
+  def show
   end
 
-  private
-  def get_jmbg
-    Verhoeff.checksum_of(Luhnacy.generate(12))
+  def new
+    @jmbg = Jmbg.new()
+    @jmbg.generate()    
   end
 end
